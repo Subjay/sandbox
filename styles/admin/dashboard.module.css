@@ -1,0 +1,171 @@
+.mainSection{
+  display: grid;
+  grid-template-areas:
+    "addSection addSection"
+    "frontMods backMods"
+    "skills ." ;
+  gap: 6rem;
+  margin: 4rem 4rem;
+  grid-template-columns: 1fr 1fr;
+}
+
+.addSection{
+  --_height: 5rem;
+  grid-area: addSection;
+  display: flex;
+  align-items: center;
+  font-size: 1.6rem;
+  height: var(--_height);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: calc( var(--_height) / 2 );
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.addSpan{
+  padding: 0rem 3rem;
+  font-weight: 800;
+}
+
+.addBtn{
+  --_size: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: var(--_size);
+  width: 14rem;
+  background-color: white;
+  border-radius: calc( var(--_size) / 2 );
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: var(--text-contrast);
+  margin: 0rem 1rem;
+}
+
+.frontListing{
+  --radius: 0.4rem;
+  grid-area: frontMods;
+  min-width: 60rem;
+  min-width: 60rem;
+}
+
+.backListing{
+  grid-area: backMods;
+  --radius: 0.4rem;
+  max-height: 60rem;
+  min-width: 60rem;
+}
+
+.accountListing{
+  grid-area: accounts;
+  --radius: 0.4rem;
+  max-height: 60rem;
+  min-width: 60rem;
+}
+
+.skillsListing{
+  grid-area: skills;
+  --radius: 0.4rem;
+  max-height: 60rem;
+  min-width: 60rem;
+}
+
+.listTitle{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--header-color);
+  padding: 1rem 2rem;
+  border-top-left-radius: var(--radius);
+  border-top-right-radius: var(--radius);
+}
+
+.listSpan{
+  min-width: fit-content;
+}
+
+.listSearchBar{
+  --search-size: 3rem;
+  display: flex;
+  align-items: center;
+  
+  min-width: 40rem;
+  --_height: var(--search-size);
+  height: var(--_height);
+  border-radius: calc( var(--_height) / 2 );
+  background-color: var(--search-bar-color);
+  margin-left: 4rem;
+}
+
+.input{
+  box-sizing: content-box;
+  border: none;
+  height: var(--_height);
+  color: var(--search-bar-font-color);
+  background: none;
+  width: 95%;
+  margin: 0rem;
+}
+
+.input::placeholder{
+  color: var(--search-bar-placeholder-color);
+}
+
+.input:focus{
+  outline: none;
+}
+
+.MGIcon{
+  --size: 2rem;
+  margin: 0 1rem;
+  width: var(--size);
+  height: var(--size);
+  fill: none;
+  stroke:var(--search-bar-placeholder-color);
+  stroke-linecap:round;
+  stroke-miterlimit:10;
+  stroke-width: 2px;
+}
+
+.list{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: space-evenly;
+  padding: 0;
+  list-style: none;
+  border-bottom-left-radius: var(--radius);
+  border-bottom-right-radius: var(--radius);
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.moduleLine{
+  height: 6rem;
+
+  display: grid;
+  grid-template-columns: minmax(24rem,auto) 1fr auto auto;
+  justify-content: center;
+  align-items: center;
+  padding: 0rem 0rem 0rem 1rem;
+  font-size: 1.2rem;
+}
+
+.oddModule{
+  color: #474747;
+  background-color: white;
+}
+
+.evenModule{
+  background-color: #474747;
+}
+
+.skillLine{
+  height: 6rem;
+
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  justify-content: center;
+  align-items: center;
+  padding: 0rem 0rem 0rem 1rem;
+  font-size: 1.2rem;
+}

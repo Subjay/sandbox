@@ -1,0 +1,34 @@
+.mainWrapper{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+}
+
+.projectsContent{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.subTitle{
+  font-size: 3rem;
+  margin: 5rem 0 3rem 0;
+  font-weight: 600;
+}
+
+.separator{
+  width: 80%;
+  border: 1px solid var(--hr-color);
+  border-radius: 2px;
+}
+
+.verticalSeparator{
+  height: calc(100% - 8rem);
+  border-left-width: 1px;
+  border-left-color: var(--vl-color);
+  border-left-style: solid;
+  margin: 0 1rem;
+}

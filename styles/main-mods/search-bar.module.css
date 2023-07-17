@@ -1,0 +1,91 @@
+.searchBarSection{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  --search-size: 2.8rem;
+  
+  flex: 10;
+}
+
+.searchBar{
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  
+  width: 80%;
+  --_height: var(--search-size);
+  height: var(--_height);
+  border-radius: calc( var(--_height) / 2 );
+  background-color: var(--search-bar-color);
+}
+
+.input{
+  box-sizing: content-box;
+  border: none;
+  height: var(--_height);
+  color: var(--search-bar-font-color);
+  background: none;
+  width: 95%;
+  margin: 0rem;
+}
+
+.input::placeholder{
+  color: var(--search-bar-placeholder-color);
+}
+
+.input:focus{
+  outline: none;
+}
+
+.MGIcon{
+  --size: 2rem;
+  margin: 0 1rem;
+  width: var(--size);
+  height: var(--size);
+  fill: none;
+  stroke:var(--search-bar-placeholder-color);
+  stroke-linecap:round;
+  stroke-miterlimit:10;
+  stroke-width: 2px;
+}
+
+.suggestions{
+  position: absolute;
+  top: calc(var(--search-size) + 1rem);
+  margin: 0;
+  padding: 0;
+  width: 80%;
+  border-radius: 4px;
+  background-color: var(--search-bar-color);
+  font-size: 1.2rem;
+  padding: 0rem 0rem 1rem 0rem;
+}
+
+.suggElem{
+  cursor: pointer;
+  padding: 0rem 2rem;
+  border-bottom: 1px solid #a1a1a1;
+}
+
+.close{
+  cursor: pointer;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  color: rgb(230, 230, 230);
+  border-bottom: 1px solid #a1a1a1;
+}
+
+.visible{
+  display: block;
+}
+
+.hidden{
+  display: none;
+}
+
+@media (width < 1080px){
+  .searchBarSection{
+    display: none;
+  }
+}

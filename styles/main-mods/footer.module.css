@@ -1,0 +1,47 @@
+.footer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+
+  color: white;
+  font-size: 1.4rem;
+  text-align: center;
+
+  border-top: 1px solid var(--vl-color);
+  background-color: var(--footer-color);
+}
+
+.info{
+  margin: 1rem 0;
+}
+
+.logo{
+  font-size: 1.4rem;
+}
+
+.capitals{
+  transform: scale(2);
+}
+
+.linksDiv{
+  padding: 1rem 0;
+}
+
+.footer *:nth-child(2){
+  font-size: 1rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.networkLinks {
+  text-decoration: none;
+  margin: 1rem 0;
+}
+
+.pictos{
+  height: 18px;
+  fill: white;
+  margin: 0 0.8rem;
+}

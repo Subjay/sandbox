@@ -1,0 +1,107 @@
+.navList{
+  --padding-top: 6rem;
+  --nav-size: calc( 100vh - calc( var(--header-size) + var(--padding-top) ) );
+  position: sticky;
+  top: var(--header-size);
+  left: 0;
+  height: var(--nav-size);
+  min-width: 32rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: scroll;
+  overflow-x: hidden;
+  padding-top: var(--padding-top);
+  /* flex: var(--sides-flex-size); */
+}
+
+.navTitle{
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 3rem;
+  padding-bottom: 1rem ;
+  border-bottom: 1px solid var(--hr-color);
+}
+
+.projectTypes{
+  font-size: 1.8rem;
+  margin-bottom: 3rem ;
+  font-weight: 600;
+}
+
+.projectNames{
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+
+.spanTypes{
+  margin-bottom: 1rem;
+}
+
+.mainList,
+.subList{
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+}
+
+.subList{
+  padding-left: 0.5rem;
+}
+
+.anchor{
+  text-decoration: none;
+  color: white;
+}
+
+.selected{
+  font-weight: 600;
+  color: var(--main-blue);
+}
+
+/**************/
+/* for chrome */
+/**************/
+.navList:hover::-webkit-scrollbar-track{
+  background: rgba(136, 136, 136, 0.2); 
+}
+
+.navList:hover::-webkit-scrollbar-thumb{
+  background: #888;
+}
+
+/* width */
+.navList::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+.navList::-webkit-scrollbar-track {
+  background: transparent;
+}
+ 
+/* Handle */
+.navList::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+/* Handle on hover */
+.navList::-webkit-scrollbar-thumb:hover {
+  background: #777; 
+}
+
+/**************/
+/* for firefox */
+/**************/
+
+.navList{
+  scrollbar-width: thin;
+}
+
+@media (width<1300px){
+  .navList{
+    display: none;
+  }
+}

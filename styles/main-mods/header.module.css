@@ -1,0 +1,69 @@
+.header{
+  position: sticky;
+  top:0;
+  display: flex;
+  height: var(--header-size);
+  width: 100%;
+  min-width: 360px;
+  /* for vars to be available for the childrens,
+  you need to create them in a parent's css class */
+  --header-font-size: 1.8rem;
+  align-items: center;
+  background-color: var(--header-color);
+  z-index: 1;
+}
+
+.logo{
+  display: flex;
+  justify-content: center;
+  font-size: var(--header-font-size);
+  flex: 3;
+  min-width: 32rem;
+  flex-wrap: nowrap;
+}
+
+.logoLink{
+  text-align: center;
+  text-decoration: none;
+  color: var(--logo-main-color);
+  font-weight: 800;
+  width: max-content;
+}
+
+.sandboxTitle{
+  display: flex;
+  justify-content: center;
+  font-size: var(--header-font-size);
+  font-weight: 400;
+  flex: 3;
+  min-width: 32rem;
+}
+
+.loginLink{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: var(--logo-main-color);
+  width: max-content;
+}
+
+.capitals{
+  font-size: calc( var(--header-font-size) * 1.15 );
+}
+
+.lettersHighlight{
+  color: var(--logo-sub-color);
+}
+
+.module{
+  position: absolute;
+  top:0;
+}
+
+@media (width < 1080px){
+  .logo,
+  .sandboxTitle{
+    min-width: fit-content;
+  }
+}
