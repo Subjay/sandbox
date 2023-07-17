@@ -6,7 +6,7 @@ export default function getURL(path: string) {
     console.log("path",path);
     console.log("baseURL",baseURL);
     console.log("res", "https://" + baseURL + path);
-  return (baseURL + path).toString();
+  return ("https://" + baseURL + path).toString();
 }
 
 export function isConnected(): boolean{
