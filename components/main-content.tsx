@@ -4,7 +4,7 @@ import BackProject from './project-module';
 import { FrontModuleData, BackModuleData, ModulesLists } from '../lib/definitions';
 
 export default function MainContent( props : { modsLists : ModulesLists } ){
-  const { frontModules , backModules } = props.modsLists;
+  const { frontModules , backModules } = props.modsLists || { frontModules: [], backModules: [] } ;
 
   if( frontModules.length === 0 && backModules.length === 0){
     return(

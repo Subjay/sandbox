@@ -4,6 +4,6 @@ export default function getURL(path: string) {
     : process.env.VERCEL_URL;
 
   const protocol = process.env.DEV_PROTOCOL ? "" : "https://";
-
+  
   return (protocol + baseURL + path).toString();
 }

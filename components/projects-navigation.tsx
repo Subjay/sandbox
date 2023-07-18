@@ -12,7 +12,8 @@ interface ProjectsNavProps{
 export default function ProjectsNavigation( props: ProjectsNavProps){
   const UpdateModSelected = useContext( UpdateModContext );
   const { selectedModule } = props;
-  const { backModules, frontModules } = props.modsLists;
+  const { backModules = [], frontModules = []} = props.modsLists || { frontModules: [], backModules: [] } ;
+
   var indexSelected:number = -1;
 
   if( selectedModule.type === "front"){
