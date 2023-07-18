@@ -2,6 +2,10 @@ export default function getURL(path: string) {
   const baseURL = process.env.VERCEL_URL === undefined
     ? process.env.NEXT_PUBLIC_SITE_URL!
     : process.env.VERCEL_URL;
+
+  const protocol = process.env.VERCEL_URL === undefined
+  ? ""
+  : "https://";
     
-  return ("https://" + baseURL + path).toString();
+  return (protocol + baseURL + path).toString();
 }
