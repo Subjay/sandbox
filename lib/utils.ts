@@ -6,6 +6,7 @@ export default function getURL(path: string) {
   const protocol = process.env.VERCEL_URL === undefined
   ? ""
   : "https://";
-    
+  
+  console.log("utils.ts result", protocol + baseURL + path );
   return (protocol + baseURL + path).toString();
 }
