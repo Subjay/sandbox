@@ -6,11 +6,12 @@
   margin-bottom: 4rem;
   padding-bottom: 3rem;
   --module-border-radius: 6px;
+  isolation: isolate;
 }
 
 .name{
   font-size: 2rem;
-  margin-top: 4rem;
+  padding-top: 6rem;
 }
 
 .frame{

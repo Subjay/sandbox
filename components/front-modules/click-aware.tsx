@@ -4,7 +4,7 @@ export default function Button(){
   return(
     <section className={ style.mainSection }>
 
-      <button type='button' className={ style.myButton }>
+      <button type='button' className={ `${style.myButton} ${style.myButton2}` }>
           &#9889; Click Me &#9889;
         <span></span>
         <span></span>
@@ -12,7 +12,7 @@ export default function Button(){
         <span></span>
       </button>
       
-      <button type='button' className={ `${style.myButton} ${style.myButton2}` }>
+      <button type='button' className={ style.myButton }>
           &#9889; Click Me &#9889;
         <span></span>
         <span></span>
