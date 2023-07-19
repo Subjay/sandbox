@@ -43,7 +43,10 @@ export default function FrontModule( infos : FrontModuleProps ){
   return(
     <article className={ style.wrapper } id={ `article_fm_${id}` }>
       <section className={ style.name } ref={modRef}>{ name }</section>
-      <section className={ style.frame }>{ (modImport ? modImport.default() : "") }</section>
+      <iframe
+        src={ `/modules/${file_name}` }
+        className={ style.frame }
+        draggable={ false } />
       <Link
         href={ link }
         className={ style.fullscreenLink }

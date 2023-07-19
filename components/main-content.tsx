@@ -15,7 +15,6 @@ export default function MainContent( props : { modsLists : ModulesLists } ){
 
   return(
     <section className={ style.mainWrapper }>
-      {/* <div className={ style.verticalSeparator }></div> */}
       <section className={ style.projectsContent}>
         <h3 className={ style.subTitle }>Front-end Modules</h3>
         {
@@ -30,7 +29,7 @@ export default function MainContent( props : { modsLists : ModulesLists } ){
             )
         }
         
-        { backModules && (<h3 className={ style.subTitle }>Back-end Projects</h3>) }
+        { backModules.length !== 0 && (<h3 className={ style.subTitle }>Back-end Projects</h3>) }
         {
           backModules.map( (proj: BackModuleData ) => (
             <BackProject
@@ -43,6 +42,5 @@ export default function MainContent( props : { modsLists : ModulesLists } ){
           )
         }
       </section>
-      {/* <div className={ style.verticalSeparator }></div> */}
     </section>);
 }

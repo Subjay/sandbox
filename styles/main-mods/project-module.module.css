@@ -16,10 +16,11 @@
 .frame{
   aspect-ratio: 16/9;
   width: 100%;
-  background-color: white;
   border-top-right-radius: var(--module-border-radius);
   border-top-left-radius: var(--module-border-radius);
   overflow: hidden;
+  outline: none;
+  border: 0px;
 }
 
 .fullscreenLink{

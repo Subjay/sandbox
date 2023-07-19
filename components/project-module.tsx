@@ -34,7 +34,10 @@ export default function BackProject( infos: BackProjectProps ){
   return(
     <article className={ style.wrapper } id={ `article_bm_${id}` }>
       <section className={ style.name } ref={ modRef }>{ name }</section>
-      <section className={ style.frame }></section>
+      <iframe
+        src={ link }
+        className={ style.frame }
+        draggable={ false } />
       <Link
         href={ link }
         className={ style.fullscreenLink }

@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100%;
+  width: 100%;
+  
+  background-size: 100% 100%;
+  background-position: 0px 0px, 0px 0px, 0px 0px;
+  background-image:
+  radial-gradient(
+    80% 80% at 102% -15%,
+    #83838383 20%, #ffffff00 86%),
+  radial-gradient(
+    160% 154% at 711px -303px,
+    #6d6d6d 0%,
+    #222222 100%);
+}
+
+.innerDiv{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  height: 35rem;
+  width: 35rem;
+  border-radius: 8px;
+  
+  /* background-color: rgba(123, 207, 255, 0.15);
+  border: 1px solid rgba(112, 203, 255, 0.4); */
+}
+
+.myButton{
+  --_height: 4.5rem;
+  padding: 1rem;
+  margin: 1rem;
+  cursor: pointer;
+  font-size: 1.8rem;
+  color: #353535;
+  height: var(--_height);
+  width: 20rem;
+  border-radius: calc( var(--_height) / 2 );
+  border: 0;
+}
+
+.glowEffect{
+  --glow-line-color: #cef7ff;
+  --glow-line-thickness: 2px;
+  --glow-blur-color: #b2f1ff;
+  --glow-blur-thickness: 2px;
+  --glow-blur-amount: 5px;
+  --glow-line-length: 30px;
+  --glow-offset: 0px;
+
+  /* do no change, used for calculations */
+  --container-offset: 100px;
+
+  --stroke-dashoffset: -90px;
+  --animation-speed: 800ms;
+  --opacity-ease: cubic-bezier(.62,.26,.5,.78);
+  --offset-ease: cubic-bezier(.62,.26,.5,.78);
+
+  position: relative;
+}
+
+.glowContainer{
+  /* prevent the container from being the target of :hover */
+  pointer-events: none;
+  position: absolute;
+  inset: calc( var(--container-offset) / -2 );
+  width: calc( 100% + var(--container-offset) );
+  height:calc( 100% + var(--container-offset) );
+  opacity: 0;
+}
+
+.glowBlur,
+.glowLine{
+  width: calc( calc( 100% - var( --container-offset ) ) + var(--glow-offset) );
+  height: calc( calc( 100% - var( --container-offset ) ) + var(--glow-offset) );
+  x: calc( (var(--container-offset) / 2) + calc( var(--glow-offset) / -2 ) );
+  y: calc( (var(--container-offset) / 2) + calc( var(--glow-offset) / -2 ) );
+  fill: transparent;
+  stroke-dasharray: var(--glow-line-length) calc( 50px - var(--glow-line-length) );
+}
+
+.glowEffect:is(:hover, :focus) :is(.glowLine, .glowBlur){
+  transition: stroke-dashoffset var(--animation-speed) var(--offset-ease);
+  stroke-dashoffset: var(--stroke-dashoffset);
+}
+
+.glowLine{
+  stroke-width: 2px;
+  stroke: var(--glow-line-color);
+  stroke-width: var(--glow-line-thickness);
+}
+
+.glowBlur{
+  filter: blur( var(--glow-blur-amount) );
+  stroke: var(--glow-blur-color);
+  stroke-width: var(--glow-blur-thickness);
+}
+
+.glowEffect:is(:hover, :focus) .glowContainer {
+  animation: glow-visibility var(--opacity-ease) var(--animation-speed);
+}
+
+@keyframes glow-visibility {
+  0%, 100% { opacity: 0; }
+  25%, 75% { opacity: 1; }
+}
+
+.green{
+  --stroke-dashoffset: 90px;
+  --glow-line-color: #71ff90;
+  --glow-blur-color: #71ff90;
+  --glow-line-length: 10px;
+}
+
+.violet{
+  --glow-line-color: #ff63f7;
+  --glow-blur-color: #ff63f7;
+  --glow-line-length: 20px;
+  --animation-speed: 1000ms;
+}
