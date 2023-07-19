@@ -7,7 +7,7 @@ type ErrorMsg = {
 }
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse< BackModulesList | ErrorMsg >){
-  const query = `SELECT bm.id, bm.name, bm.link, bm.description, bm.thumbnail FROM back_modules AS bm INNER JOIN skills_b_mod AS sbm ON bm.id=sbm.module_id INNER JOIN skills AS s ON sbm.skill_id=s.id WHERE LOWER(s.name) LIKE LOWER('%${req.query.name}%') GROUP BY bm.name`
+  const query = `SELECT bm.id, bm.name, bm.link, bm.description, bm.thumbnail FROM back_modules AS bm INNER JOIN skills_b_mod AS sbm ON bm.id=sbm.module_id INNER JOIN skills AS s ON sbm.skill_id=s.id WHERE LOWER(s.name) LIKE LOWER('%${req.query.name}%') GROUP BY bm.name ORDER BY bm.id DESC`
   
   try{
     const mods = await executeQuery(query);

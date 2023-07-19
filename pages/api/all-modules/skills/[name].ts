@@ -12,7 +12,7 @@ type ErrorMsg = {
 }
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse< SuccessData | ErrorMsg >){
-  const query1 = `SELECT fm.id, fm.name, fm.link, fm.description, fm.file_name FROM front_modules AS fm INNER JOIN skills_f_mod AS sfm ON fm.id=sfm.module_id INNER JOIN skills AS s ON sfm.skill_id=s.id WHERE LOWER(s.name) LIKE LOWER('%${req.query.name}%') GROUP BY fm.name`
+  const query1 = `SELECT fm.id, fm.name, fm.link, fm.description, fm.file_name FROM front_modules AS fm INNER JOIN skills_f_mod AS sfm ON fm.id=sfm.module_id INNER JOIN skills AS s ON sfm.skill_id=s.id WHERE LOWER(s.name) LIKE LOWER('%${req.query.name}%') GROUP BY fm.name ORDER BY fm.id DESC`
   var frontMods: FrontModulesList = [];
   
   try{
@@ -32,7 +32,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
     res.status(500).json({ errMsg: `Error in query (${query1}) => ${error.message}` });
   }
 
-  const query2 = `SELECT bm.id, bm.name, bm.link, bm.description, bm.thumbnail FROM back_modules AS bm INNER JOIN skills_b_mod AS sbm ON bm.id=sbm.module_id INNER JOIN skills AS s ON sbm.skill_id=s.id WHERE LOWER(s.name) LIKE LOWER('%${req.query.name}%') GROUP BY bm.name`
+  const query2 = `SELECT bm.id, bm.name, bm.link, bm.description, bm.thumbnail FROM back_modules AS bm INNER JOIN skills_b_mod AS sbm ON bm.id=sbm.module_id INNER JOIN skills AS s ON sbm.skill_id=s.id WHERE LOWER(s.name) LIKE LOWER('%${req.query.name}%') GROUP BY bm.name ORDER BY bm.id DESC`
   var backMods: BackModulesList = [];
 
   try{

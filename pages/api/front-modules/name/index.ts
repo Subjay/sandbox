@@ -8,7 +8,7 @@ type ErrorMsg = {
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse<FrontModulesList | ErrorMsg>) {
   try{
-    const frontModules = await executeQuery(`SELECT * FROM front_modules`);
+    const frontModules = await executeQuery(`SELECT * FROM front_modules ORDER BY id DESC`);
 
     var frontResults: FrontModulesList = [];
     frontModules.forEach( (mod : FrontModuleData ) => {

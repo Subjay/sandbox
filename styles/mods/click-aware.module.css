@@ -1,0 +1,121 @@
+.mainSection{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  height: 100%;
+  width: 100%;
+
+  background-size: 100% 100%;
+  background-position: 0px 0px;
+  background-image: linear-gradient(45deg, #0D1922FF 0%, #0C4767FF 83%);
+}
+
+.myButton{
+  margin: 1rem;
+  position: relative;
+  cursor: pointer;
+  width: 25rem;
+  padding: 2rem;
+  
+  --radius: 15px;
+  border-radius : var(--radius);
+  
+  --focus-color:rgb(202, 236, 252);
+  --click-color: rgb(121, 121, 121);
+  --hover-color: rgb(151, 220, 252);
+  color: rgb(94, 94, 94);
+  border: 2px solid var(--focus-color);
+  background-color: rgb(255, 255, 255);
+  /* transition: background-color 200ms, color 200ms; */
+
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+
+  overflow: hidden;
+  isolation: isolate;
+
+  --transition-speed: 300ms;
+}
+
+.myButton2{
+  border-radius: 100vw;
+}
+
+.myButton:is(:hover, :focus-visible){
+  background-color: var(--hover-color);
+  color: white;
+}
+
+.myButton span{
+  position: absolute;
+  width: 20%;
+  height: 100%;
+  /* z-index: -1; */
+}
+
+.myButton > :nth-child(1){
+  left: 0;
+  top: 0;
+}
+
+.myButton > :nth-child(2){
+  left: 20%;
+  top: 0;
+}
+
+.myButton > :nth-child(3){
+  right: 20%;
+  top: 0;
+}
+
+.myButton > :nth-child(4){
+  right: 0;
+  top: 0;
+}
+
+.myButton::before{
+  content:'';
+  position: absolute;
+  z-index: -1;
+  background: var(--click-color);
+  width: 10%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  inset: 0;
+  margin: auto;
+  opacity: 0;
+
+  transition:
+    transform var(--transition-speed) calc( var(--transition-speed) / 2 ),
+    opacity calc( var(--transition-speed) / 2 );
+}
+
+.myButton:active::before{
+  transform: scale(20);
+  opacity: 1;
+  transition: transform calc( var(--transition-speed) * 2 ), opacity calc( var(--transition-speed) / 2 );
+}
+
+.myButton:has(:nth-child(1):active)::before,
+.myButton:has(:nth-child(4):active)::before{
+  transition: transform var(--transition-speed), opacity calc( var(--transition-speed) / 2 );
+}
+
+.myButton:has(:nth-child(1):active)::before {
+  margin-left: 0;
+}
+
+.myButton:has(:nth-child(2):active)::before {
+  margin-left: 20%;
+}
+
+.myButton:has(:nth-child(3):active)::before {
+  margin-right: 20%;
+}
+
+.myButton:has(:nth-child(4):active)::before {
+  margin-right: 0;
+}

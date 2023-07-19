@@ -1,6 +1,6 @@
 import style from '../styles/main-mods/project-module.module.css';
 import Link from 'next/link';
-import { useEffect, useRef, useContext, useState } from 'react';
+import { useEffect, useRef, useContext } from 'react';
 import { UpdateModContext } from '../pages';
 
 type FrontModuleProps = {
@@ -16,16 +16,8 @@ export default function FrontModule( infos : FrontModuleProps ){
   const { id, name , link , description , file_name } = infos;
   const UpdateModSelected = useContext( UpdateModContext );
   const modRef = useRef<HTMLDivElement>(null);
-  const [ modImport , setModImport] = useState<any>( null );
 
-  const importModule = async () => {
-    const t = await import(`./front-modules/${file_name}`);/* webpackChunkName: "[request]" */ 
-    setModImport( t );
-  }
-  
   useEffect(() => {
-    importModule();
-    
     const moduleObserver = new IntersectionObserver( (entries : IntersectionObserverEntry[] ) => {
       if( entries[0].isIntersecting ){
         UpdateModSelected( id, "front" );

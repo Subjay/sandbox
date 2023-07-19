@@ -1,7 +1,5 @@
 import style from '../../styles/mods/animated-glow.module.css';
 
-export const moduleName = "Animated Glow";
-
 export default function Module(){
   return (
     <div className={ style.main }>

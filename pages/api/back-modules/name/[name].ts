@@ -8,7 +8,7 @@ type ErrorMsg = {
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse<BackModulesList | ErrorMsg>) {
   try{
-    const backModules = await executeQuery(`SELECT * FROM back_modules WHERE LOWER(name) LIKE LOWER("%${req.query.name}%")`);
+    const backModules = await executeQuery(`SELECT * FROM back_modules WHERE LOWER(name) LIKE LOWER("%${req.query.name}%") ORDER BY id DESC`);
 
     var backResults: BackModulesList = [];
     backModules.forEach( (mod : BackModuleData ) => {

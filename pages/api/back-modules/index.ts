@@ -12,7 +12,7 @@ type ErrorMsg = {
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse<SuccessData | ErrorMsg>) {
   try{
-    const backModules = await executeQuery("SELECT * FROM back_modules");
+    const backModules = await executeQuery("SELECT * FROM back_modules ORDER BY id DESC");
     
     var backResults: BackModulesList = [];
     backModules.forEach( (mod : BackModuleData ) => {
