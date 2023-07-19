@@ -1,0 +1,129 @@
+.mainSection{
+  position: relative;
+  display: grid;
+  grid-template-columns: 20fr 80fr;
+  height: 100%;
+  width: 100%;
+  
+  background-size: 100% 100%;
+  background-position: 0px 0px, 0px 0px;
+  background-image:
+  radial-gradient(
+    80% 80% at 102% -15%,
+    #63636383 20%, #ffffff00 86%),
+  radial-gradient(
+    160% 154% at 711px -303px,
+    #474747 0%,
+    #111111 100%);
+
+    --color01: #53ddff;
+    --color02: #52ffb7;
+    --color03: #fcff52;
+    --color04: #ffa468;
+    --color05: #ff6beb;
+
+    --card-width: 200px;
+    --card-height: 300px;
+    --border-width: 2px;
+    --border-radius: 10px;
+    --gradient-x: 0px;
+    --gradient-y: 0px;
+    --gradient-offset: 300px;
+}
+
+.leftSection{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3rem;
+}
+
+.rightSection{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.moduleContainer{
+  position: relative;
+  width: var(--card-width);
+  height: var(--card-height);
+  isolation: isolate;
+  border-radius: var(--border-radius);
+}
+
+.cardContent{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: calc( var(--card-width) - calc( var(--border-width) * 2) );
+  height: calc( var(--card-height) - calc( var(--border-width) * 2) );
+  background: rgb(40, 40, 40);
+  border-radius: inherit;
+  z-index: 1;
+}
+
+.normalGradient,
+.blurGradient{
+  --_grad-size: calc( max( var(--card-width), var(--card-height) ) + var(--gradient-offset) );
+  position: absolute;
+  inset: calc( var(--_grad-size) / -2 );
+  margin: auto;
+  width: var(--_grad-size);
+  height: var(--_grad-size);
+  border-radius: inherit;
+  background: conic-gradient(
+    from 0deg,
+    var(--color01),
+    var(--color02),
+    var(--color03),
+    var(--color04),
+    var(--color05),
+    var(--color01)
+  );
+  animation: gradientRota 10s linear infinite;
+  z-index: -1;
+}
+
+.normalGradientContainer,
+.blurGradientContainer{
+  position: absolute;
+  height: var(--card-height);
+  width: var(--card-width);
+  overflow: hidden;
+  border-radius: inherit;
+}
+
+.blurGradientContainer{
+  filter: blur(3.5rem);
+}
+
+@keyframes gradientRota {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.settingsPanel{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid rgb(48, 48, 48);
+  background: rgba(20, 20, 20, 0.5);
+  border-radius: 8px;
+  height: 20rem;
+  padding: 0 5rem;
+  margin-left: 5rem;
+}
+
+.panelTitle{
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.inputs{
+  max-width: 20rem;
+}
