@@ -34,23 +34,26 @@ export default function FrontModule( infos : FrontModuleProps ){
 
   return(
     <article className={ style.wrapper } id={ `article_fm_${id}` }>
-      <section className={ style.name } ref={modRef}>{ name }</section>
+      <section className={ style.name } ref={modRef}>Module : { name }</section>
+
+      <section className={ style.descriptionSection }>
+        <p className={ style.description } dangerouslySetInnerHTML={ { __html : description } }>
+        </p>
+      </section>
+
       <iframe
         src={ `/modules/${file_name}` }
         className={ style.frame }
         draggable={ false } />
+
       <Link
         href={ link }
         className={ style.fullscreenLink }
         target='_blank'>
         <span className={ style.linkSpan }>Open in a new tab</span>
       </Link>
-      <section className={ style.descriptionSection }>
-        <p className={ style.descriptionTitle }>Description :</p>
-        <p className={ style.description }>
-          { description }
-        </p>
-      </section>
+
+      <div className={ style.separator }></div>
     </article>
   );
 }

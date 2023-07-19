@@ -1,8 +1,8 @@
 .wrapper{
+  position: relative;
   display: flex;
   flex-direction: column;
   width: 80%;
-  border-bottom: 1px solid var(--hr-color);
   margin-bottom: 4rem;
   padding-bottom: 3rem;
   --module-border-radius: 6px;
@@ -10,7 +10,7 @@
 
 .name{
   font-size: 2rem;
-  margin: 4rem 0 6rem 0;
+  margin-top: 4rem;
 }
 
 .frame{
@@ -21,6 +21,7 @@
   overflow: hidden;
   outline: none;
   border: 0px;
+  z-index: 1;
 }
 
 .fullscreenLink{
@@ -33,20 +34,28 @@
   border-bottom-left-radius: var(--module-border-radius);
   height: 3rem;
   background-color: var(--fullscreen-link-color);
+  margin-bottom: 2rem;
 }
 
 .linkSpan{
   font-size: 1.2rem;
 }
 
-.descriptionTitle{
-  font-size: 1.6rem;
-  margin: 4rem 0;
-}
-
 .description{
   font-size: 1.2rem;
-  margin: 1rem 1.5rem 6rem 1.5rem;
+  margin: 2rem 0 4rem 0;
+  padding: 2rem 1.5rem 2rem 2rem;
+  border: 1px solid var(--hr-color);
+  border-radius: 4px;
+  background: rgba(114, 114, 114, 0.5);
+}
+
+.separator{
+  position: absolute;
+  margin: auto;
+  inset: 0;
+  width: 40%;
+  border-bottom: 1px solid var(--hr-color);
 }
 
 @media (width < 1080px){
