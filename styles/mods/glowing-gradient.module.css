@@ -2,8 +2,10 @@
   position: relative;
   display: grid;
   grid-template-columns: 20fr 80fr;
-  height: 100%;
-  width: 100%;
+  grid-template-areas:
+    "left right";
+  min-height: 100%;
+  min-width: 100%;
   
   background-size: 100% 100%;
   background-position: 0px 0px, 0px 0px;
@@ -32,6 +34,7 @@
 }
 
 .leftSection{
+  grid-area: left;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -39,6 +42,7 @@
 }
 
 .rightSection{
+  grid-area: right;
   position: relative;
   display: flex;
   justify-content: center;
@@ -126,4 +130,29 @@
 
 .inputs{
   max-width: 20rem;
+}
+
+@media (width < 500px){
+  .mainSection{
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "right"
+      "left";
+  }
+
+  .rightSection{
+    margin: 2rem 0rem;
+  }
+
+  .leftSection{
+    padding: 0rem;
+  }
+
+  .settingsPanel{
+    margin: 0;
+  }
+
+  .inputs{
+    width: auto;
+  }
 }

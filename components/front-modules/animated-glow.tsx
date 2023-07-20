@@ -3,8 +3,6 @@ import style from '../../styles/mods/animated-glow.module.css';
 export default function Module(){
   return (
     <div className={ style.main }>
-      <div className={ style.innerDiv }>
-        
         <button type="button" className={ `${style.myButton} ${style.glowEffect}` }>
           &#128293; Hover Me &#128293;
           <svg className={ style.glowContainer }>
@@ -31,6 +29,5 @@ export default function Module(){
           </svg>
         </button>
         
-      </div>
     </div>);
 }

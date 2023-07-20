@@ -3,8 +3,8 @@ import { useState, useEffect, useRef } from 'react';
 
 export default function GlowGrad(){
   const [ bigSliders , setBigSliders ] = useState<boolean>(false);
-  const [ width , setWidth ] = useState<number>(200);
-  const [ height, setHeight ] = useState<number>(300);
+  const [ width , setWidth ] = useState<number>(110);
+  const [ height, setHeight ] = useState<number>(120);
   const [ borderWidth, setBorderWidth ] = useState<number>(2);
   const [ radius, setRadius ] = useState<number>(10);
   const [ offset, setOffset ] = useState<number>(250);
@@ -48,7 +48,7 @@ export default function GlowGrad(){
           <label>Width : ({ width }px)</label>
           <input
             type='range'
-            min='100'
+            min='110'
             max={ bigSliders ? '1200' : '550'}
             value={ width }
             onChange={ (e) => { setWidth( parseInt( e.target.value ) ) }}
@@ -88,7 +88,7 @@ export default function GlowGrad(){
       <section className={ style.rightSection }>
 
         <div className={ style.moduleContainer }>
-          <div className={ style.cardContent }>Special container</div>
+          <div className={ style.cardContent }>&#10024; Customize me &#10024;</div>
 
           <div className={ style.blurGradientContainer }>
             <div className={ style.blurGradient }></div>

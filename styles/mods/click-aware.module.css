@@ -16,8 +16,9 @@
   margin: 1rem;
   position: relative;
   cursor: pointer;
-  width: 25rem;
-  padding: 2rem;
+  width: 15vw;
+  min-width: 18rem;
+  padding: clamp(1.5rem, 5vh , 2rem);
   
   --radius: 15px;
   border-radius : var(--radius);
@@ -31,7 +32,7 @@
   /* transition: background-color 200ms, color 200ms; */
 
   font-family: 'Poppins', sans-serif;
-  font-size: 1.6rem;
+  font-size: clamp(1.1rem, 5vh ,1.6rem);
   font-weight: 600;
 
   overflow: hidden;
@@ -41,7 +42,7 @@
 }
 
 .myButton2{
-  border-radius: 100vw;
+  --radius: 100vw;
 }
 
 .myButton:is(:hover, :focus-visible){
