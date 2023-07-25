@@ -1,0 +1,124 @@
+.mainContent{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-size: 100% 100%;
+  background-position: 0px 0px, 0px 0px;
+  background-image:
+  radial-gradient(
+    80% 80% at 102% -15%,
+    #63636383 20%, #ffffff00 86%),
+  radial-gradient(
+    160% 154% at 711px -303px,
+    #474747 0%,
+    #111111 100%);
+
+  height: 100vh;
+  width: 100vw;
+}
+
+.container{
+  position: relative;
+  top: calc( var(--card-height) / -2 );
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  --card-width: 40rem;
+  --card-height: 20rem;
+  --border-radius: 10px;
+
+  --color01: #53ddff;
+  --color02: #52ffb7;
+  --color03: #fcff52;
+  --color04: #ffa468;
+  --color05: #ff6beb;
+
+  --x-rotation: 0deg;
+  --y-rotation: 0deg;
+
+  isolation: isolate;
+}
+
+.gradient{
+  position: absolute;
+  top: calc( var(--offset) / -2 );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  --offset: 2rem;
+
+  background: conic-gradient(
+    from 90deg,
+    var(--color01),
+    var(--color02),
+    var(--color03),
+    var(--color04),
+    var(--color05),
+    var(--color01)
+  );
+
+  width: calc( var(--card-width) + var(--offset) );
+  height: calc( var(--card-height) + var(--offset) );
+  border-radius: var(--border-radius);
+
+  transform-style: preserve-3d;
+  transform:
+    perspective( 1000px )
+    rotateX( var(--x-rotation) )
+    rotateY( var(--y-rotation) )
+    translateZ(-20px);
+
+  z-index: -1;
+}
+
+.gradient::before{
+  content: '';
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  
+  background: conic-gradient(
+    from 90deg,
+    var(--color01),
+    var(--color02),
+    var(--color03),
+    var(--color04),
+    var(--color05),
+    var(--color01)
+  );
+  
+  filter: blur(1.5rem);
+  z-index: 1;
+}
+
+.tiltCard{
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transform-style: preserve-3d;
+  transform: perspective( 1000px ) rotateX( var(--x-rotation) ) rotateY( var(--y-rotation) );
+  background-color: #474747;
+  width: var(--card-width);
+  height: var(--card-height);
+  border-radius: var(--border-radius);
+}
+
+.tiltCard::before{
+  content: '';
+  position: absolute;
+  border-radius: inherit;
+  filter: blur(1rem);
+}
+
+.tiltCard::before{
+  inset: -0.25rem -0.5rem;
+  background: rgba(0,0,0,0.6);
+  transform: translateZ(-20px);
+}

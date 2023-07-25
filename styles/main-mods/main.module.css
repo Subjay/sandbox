@@ -21,6 +21,18 @@
   min-height: 100vh;
 }
 
+.loadingContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.loadingGif{
+  width: 2rem;
+}
+
 @media (width < 1300px){
   .maindGrid{
     grid-template-columns: 14fr 4fr;

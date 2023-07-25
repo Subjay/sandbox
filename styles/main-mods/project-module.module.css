@@ -15,6 +15,7 @@
 }
 
 .frame{
+  position: relative;
   aspect-ratio: 16/9;
   width: 100%;
   border-top-right-radius: var(--module-border-radius);
@@ -23,6 +24,9 @@
   outline: none;
   border: 0px;
   z-index: 1;
+  background-image: url('../../public/images/icons/Icon-Loading.gif');
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .fullscreenLink{

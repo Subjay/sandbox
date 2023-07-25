@@ -19,6 +19,7 @@ export default function Sandbox() {
   
   const [ selectedMod , setSelectedMod ] = useState<{id: number, type: "front" | "back"}>({ id: -2, type: "front" });
   const [ techList, setTechList ] = useState<string[]>([]);
+  const [ loading, setLoading ] = useState<boolean>(true);
 
   const UpdateAPIsUrl = (url: string) => {
     setApiUrl( url );
@@ -65,15 +66,30 @@ export default function Sandbox() {
     });
   
     setMods( resData );
+    setLoading(false);
   }
 
   useEffect( () => {
     fetchModulesData( apiUrl );
+    if( !loading ) setLoading(true);
   }, [apiUrl]);
 
   useEffect( () => {
     fetchTechList(selectedMod);
   },[selectedMod]);
+
+  if( loading ){
+    return (
+      <BaseLayout
+        home
+        description="Sandbox website for projects and/or modules examples from Sébastien Gillig"
+        title = "Sandbox">
+          <div className={ style.loadingContainer }>
+            <img src="/images/icons/Icon-Loading.gif" alt='loading gif' className={ style.loadingGif } />
+          </div>
+      </BaseLayout>
+    )
+  }
 
   return (
   <BaseLayout

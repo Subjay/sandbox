@@ -45,4 +45,9 @@ body{
   color: var(--text-main-color);
   background-color: var(--bg-color);
   color: white;
+  scrollbar-width: none;
+}
+
+::-webkit-scrollbar{
+  width: 0;
 }
