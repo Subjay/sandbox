@@ -49,7 +49,7 @@
   justify-content: center;
   align-items: center;
 
-  --offset: 2rem;
+  --offset: 3rem;
 
   background: conic-gradient(
     from 90deg,
@@ -114,11 +114,19 @@
   content: '';
   position: absolute;
   border-radius: inherit;
-  filter: blur(1rem);
+  filter: blur(0.5rem);
 }
 
 .tiltCard::before{
   inset: -0.25rem -0.5rem;
-  background: rgba(0,0,0,0.6);
+  background: rgba(0,0,0,0.5);
   transform: translateZ(-20px);
+}
+
+@media (width < 500px){
+  .container{
+  --card-width: 20rem;
+  --card-height: 5rem;
+  --border-radius: 10px;
+  }
 }

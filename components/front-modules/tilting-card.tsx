@@ -31,7 +31,7 @@ export default function TiltCard(): JSX.Element{
         <div className={ style.gradient }>
         </div>
         <div className={ style.tiltCard } ref={ cardRef }>
-          Here goes the content
+          &#10024; Here goes the content &#10024;
         </div>
       </div>
     </section>
